@@ -14,22 +14,17 @@ function Footer() {
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li className="ms-3">
-            <a className="text-body-secondary" href="#">
-              <FontAwesomeIcon icon={faTwitter} style={{ color: "#ffffff", fontSize: '1.5rem' }} /> {/* Twitter Icon */}
-            </a>
-          </li>
-          <li className="ms-3">
-            <a className="text-body-secondary" href="#">
+            <a className="text-body-secondary" href="https://www.instagram.com/ig_adisingh_0/">
               <FontAwesomeIcon icon={faInstagram} style={{ color: "#ffffff", fontSize: '1.5rem' }} /> {/* Instagram Icon */}
             </a>
           </li>
           <li className="ms-3">
-          <a href="/" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <a href="https://www.linkedin.com/in/aditya-singh-84747a269/" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
             <FontAwesomeIcon icon={faLinkedin} style={{ color: "#ffffff", fontSize: '1.5rem' }} /> {/* LinkedIn Icon */}
           </a>
           </li>
           <li className="ms-3">
-          <a href="/" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <a href="https://github.com/AdityaSingh-byte/Sorting-Visualizer" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
           <FontAwesomeIcon icon={faGithub} style={{ color: "#ffffff", fontSize: '1.5rem' }}/>
           </a>
           </li>
