@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import NavBar from '../../stateless/navbar/navbar-stateless';
-import DrawerList from '../../stateless/sidebar/sidebar'; 
+import NavBar from './navbar-stateless';
+import DrawerList from '../sidebar/sidebar'; 
 
-export default function NavBarStatful() {
+export default function NavBarStateful() {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => {

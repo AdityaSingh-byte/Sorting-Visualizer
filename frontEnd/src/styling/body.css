@@ -12,18 +12,35 @@
 }
 
 .text {
-    font-size: 6.5rem;
+    font-size: 8vw;
     font-weight: 600;
-    color: #ffffff; /* Text color */
+    color: #ffffff;
     letter-spacing: 4px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds depth */
-    position: relative; /* Keeps the text in the normal flow */
-    z-index: 1; /* Ensure text is above the background */
-    background-color: transparent; /* Ensure no background color is set */
-    padding: 10px; /* Optional: Add padding for better appearance */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
+    position: relative;
+    z-index: 1; 
+    background-color: transparent;
+    padding: 10px;
     text-transform: uppercase;
 }
 
+@media (max-width: 1200px) {
+    .text {
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+        font-size: 4vw;
+    }
+}
 
 .bar-container {
     position: absolute;
@@ -36,8 +53,8 @@
 }
 
 .bar {
-    flex: 1; /* Allow bars to fill the available space */
-    margin: 0 2px; /* Adjust margin for gap between bars */
+    flex: 1; 
+    margin: 0 2px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 4px;
 }
