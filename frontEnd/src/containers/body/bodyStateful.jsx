@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Body from '../../stateless/body/body';
-
+import Body from './body';
+import CodeSnippet from "../../common/snippets/bodySnippet/bodyCodeSnippet";
+import './style.css';
 function BodyStateful() {
     const [text, setText] = useState("");
     const [bars, setBars] = useState(generateRandomHeights(30, 50, 450)); // Generate initial bar heights
+    const [activeBarIndices, setActiveBarIndices] = useState([]); // State for active bar indices
     const finalText = "Sort Visualizer";
-    const scrambleTime = 100;
+    const scrambleTime = 200;
     const revealTime = 200;
 
     useEffect(() => {
@@ -54,12 +56,17 @@ function BodyStateful() {
         let i = low - 1;
 
         for (let j = low; j < high; j++) {
+            // Highlight the current and pivot bars
+            setActiveBarIndices([i + 1, j]); // Update active bars
             if (array[j] < pivot) {
                 i++;
                 [array[i], array[j]] = [array[j], array[i]];
                 await updateBars(array); // Update bars on each swap
             }
         }
+
+        // Highlight the pivot swap
+        setActiveBarIndices([i + 1, high]); // Highlight the pivot
         [array[i + 1], array[high]] = [array[high], array[i + 1]];
         await updateBars(array); // Final swap with pivot
         return i + 1;
@@ -74,13 +81,23 @@ function BodyStateful() {
     // Start sorting the bars
     const animateSorting = () => {
         const newBars = [...bars]; // Clone the current bars
-        quickSort(newBars, 0, newBars.length - 1); // Start quick sort
+        quickSort(newBars, 0, newBars.length - 1).then(() => {
+            // Reset active bars once sorting is complete
+            setActiveBarIndices([]);
+        }); // Start quick sort
     };
 
     // Render bars for sorting visualizer
     const renderBars = () => (
         bars.map((height, index) => (
-            <div key={index} className="bar" style={{ height: `${height}px` }}></div>
+            <div 
+                key={index} 
+                className="bar" 
+                style={{ 
+                    height: `${height}px`, 
+                    backgroundColor: activeBarIndices.includes(index) ? 'red' : 'white' // Set color based on active bar state
+                }} 
+            ></div>
         ))
     );
 
@@ -90,6 +107,7 @@ function BodyStateful() {
             <div className="bar-container">
                 {renderBars()}
             </div>
+            <CodeSnippet />
         </div>
     );
 }

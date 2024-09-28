@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJsSquare, faPython, faJava } from '@fortawesome/free-brands-svg-icons';
 import { faC } from '@fortawesome/free-solid-svg-icons';
 
-// Sample code snippets for different languages
 const codeSnippets = {
     javascript: `// Quick Sort in JavaScript
 async function quickSort(array, low, high) {
@@ -96,7 +95,6 @@ function CodeSnippet() {
     );
 }
 
-// Styles for the component
 const styles = {
     container: {
         display: 'flex',
@@ -108,7 +106,8 @@ const styles = {
         background: 'linear-gradient(135deg, #1a1a1a, #3f3f3f)',
         width: '80%',
         maxWidth: '800px',
-        margin: '40px auto',
+        margin: '60px auto',
+        
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.5)',
     },
     heading: {
@@ -135,11 +134,11 @@ const styles = {
         borderRadius: '5px',
     },
     codeBlockContainer: {
-        width: '100%', // Ensures it takes full width
+        width: '100%',
         display: 'flex',
-        justifyContent: 'center', // Centers the content
+        justifyContent: 'center', 
         overflow: 'auto',
-        textAlign: 'center', // Centers text inside the container
+        textAlign: 'center',
     },
     codeBlock: {
         background: 'transparent',
@@ -147,7 +146,7 @@ const styles = {
         padding: '20px',
         fontSize: '14px',
         lineHeight: '1.5',
-        maxWidth: '100%', // Keeps the code block within the container
+        maxWidth: '100%', 
         overflow: 'auto',
     },
 };
